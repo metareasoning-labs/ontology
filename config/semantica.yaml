@@ -1,0 +1,13 @@
+# Semantica integration for MetaReasoning ontology
+# https://github.com/semantica-agi/semantica
+
+ontology:
+  base_uri: "https://ontology.metareasoning.ai/core#"
+  source_dir: ontology/core
+
+storage:
+  backend: oxigraph
+  path: .semantica/oxigraph
+
+export:
+  merged_ttl: build/ontology/core.ttl
