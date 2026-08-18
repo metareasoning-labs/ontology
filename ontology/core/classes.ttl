@@ -1,0 +1,17 @@
+@prefix : <https://ontology.metareasoning.ai/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+:Entity a owl:Class ;
+  rdfs:label "Entity"@en ;
+  rdfs:comment "Anything that can be referenced in verification or agent reasoning."@en .
+
+:Concept a owl:Class ;
+  rdfs:subClassOf :Entity ;
+  rdfs:label "Concept"@en ;
+  rdfs:comment "A named idea used across products (e.g. AUM, drift index)."@en .
+
+:VerifierCheck a owl:Class ;
+  rdfs:subClassOf :Concept ;
+  rdfs:label "Verifier check"@en ;
+  rdfs:comment "A deterministic check type executed by the verification engine."@en .

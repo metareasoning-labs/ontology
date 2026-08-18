@@ -1,0 +1,15 @@
+@prefix : <https://ontology.metareasoning.ai/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:hasLabel a owl:DatatypeProperty ;
+  rdfs:domain :Entity ;
+  rdfs:range xsd:string ;
+  rdfs:label "has label"@en .
+
+:belongsToPhase a owl:DatatypeProperty ;
+  rdfs:domain :VerifierCheck ;
+  rdfs:range xsd:string ;
+  rdfs:label "belongs to phase"@en ;
+  rdfs:comment "Lifecycle phase label from a verifier blueprint (e.g. Tax Efficiency)."@en .
