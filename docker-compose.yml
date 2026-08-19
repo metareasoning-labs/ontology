@@ -1,0 +1,29 @@
+# Local Postgres for the regulatory corpus (same schema as multicatalyst-agents).
+#
+#   docker compose up -d postgres
+#   ./scripts/bootstrap_postgres.sh
+#
+# If Docker is unavailable, use Homebrew Postgres and point DATABASE_URL at it
+# (see .env.example).
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ontology-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ontology}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ontology_dev_password}
+      POSTGRES_DB: ${POSTGRES_DB:-ontology}
+    ports:
+      - "${POSTGRES_HOST_PORT:-5436}:5432"
+    volumes:
+      - ontology_pgdata:/var/lib/postgresql/data
+      - ./corpus/regulatory/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ontology} -d ${POSTGRES_DB:-ontology}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  ontology_pgdata:

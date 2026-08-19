@@ -1,0 +1,85 @@
+@prefix : <https://ontology.metareasoning.ai/regulatory#> .
+@prefix core: <https://ontology.metareasoning.ai/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://ontology.metareasoning.ai/regulatory>
+  a owl:Ontology ;
+  rdfs:label "MetaReasoning Regulatory Ontology"@en ;
+  rdfs:comment "Semantica-generated regulatory layer over SEBI, RBI, GST, IRDAI, and Income Tax corpora."@en ;
+  owl:versionInfo "0.1.0" ;
+  owl:imports <https://ontology.metareasoning.ai/core> .
+
+:RegulatoryInstrument a owl:Class ;
+  rdfs:subClassOf core:Entity ;
+  rdfs:label "Regulatory instrument"@en ;
+  rdfs:comment "Act, regulation, circular, notification, or other regulatory text unit."@en .
+
+:RegulatedEntity a owl:Class ;
+  rdfs:subClassOf core:Concept ;
+  rdfs:label "Regulated entity"@en .
+
+:Topic a owl:Class ;
+  rdfs:subClassOf core:Concept ;
+  rdfs:label "Regulatory topic"@en .
+
+:DefinedTerm a owl:Class ;
+  rdfs:subClassOf core:Concept ;
+  rdfs:label "Defined term"@en .
+
+:Obligation a owl:Class ;
+  rdfs:subClassOf core:Concept ;
+  rdfs:label "Obligation"@en .
+
+:CrossReference a owl:Class ;
+  rdfs:subClassOf core:Concept ;
+  rdfs:label "Cross reference"@en .
+
+:InstrumentHierarchy a owl:Class ;
+  rdfs:subClassOf core:Concept ;
+  rdfs:label "Instrument hierarchy"@en .
+
+:applies_to a owl:ObjectProperty ;
+  rdfs:label "applies to"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :RegulatedEntity .
+
+:hasTopic a owl:ObjectProperty ;
+  rdfs:label "has topic"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :Topic .
+
+:defines a owl:ObjectProperty ;
+  rdfs:label "defines"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :DefinedTerm .
+
+:imposes a owl:ObjectProperty ;
+  rdfs:label "imposes"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :Obligation .
+
+:references a owl:ObjectProperty ;
+  rdfs:label "references"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :CrossReference .
+
+:amends a owl:ObjectProperty ;
+  rdfs:label "amends"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :RegulatoryInstrument .
+
+:implements a owl:ObjectProperty ;
+  rdfs:label "implements"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :RegulatoryInstrument .
+
+:repeals a owl:ObjectProperty ;
+  rdfs:label "repeals"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :RegulatoryInstrument .
+
+:supersedes a owl:ObjectProperty ;
+  rdfs:label "supersedes"@en ;
+  rdfs:domain :RegulatoryInstrument ;
+  rdfs:range :RegulatoryInstrument .

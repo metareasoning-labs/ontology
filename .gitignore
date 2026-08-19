@@ -11,3 +11,10 @@ dist/
 .DS_Store
 .env
 .env.*
+!.env.example
+
+# ~4GB regulatory PDF blobs (on disk under corpus/regulatory/files/)
+corpus/regulatory/files/
+
+# Semantica Explorer preload (large multi-regulator graph)
+build/ontology/regulatory/explorer-graph.json

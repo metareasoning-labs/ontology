@@ -8,11 +8,17 @@ dependencies = [
   "rdflib>=7.0.0",
   "pyyaml>=6.0",
   "semantica>=0.6.5",
+  "psycopg[binary]>=3.2.0",
 ]
 
 [project.optional-dependencies]
 store = [
   "semantica[tripletstore-oxigraph]>=0.6.5",
+]
+regulatory = [
+  "ontology-lib[store]",
+  "semantica[llm-anthropic]>=0.6.5",
+  "anthropic>=0.40.0",
 ]
 dev = [
   "pytest>=8.0.0",

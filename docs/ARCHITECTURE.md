@@ -7,9 +7,10 @@ This repository holds **shared domain vocabulary** — not application code. Dow
 ## Layers
 
 1. **Ontology sources** (`ontology/`) — Turtle files, reviewed like schema migrations.
-2. **Semantica bridge** (`src/ontology_lib/semantica_bridge.py`) — validates TTL, syncs to Oxigraph, exports merged graphs.
-3. **Library** (`src/ontology_lib/`) — rdflib loaders plus Semantica-backed validation.
-4. **Tests** — parse checks, class assertions, and Semantica bootstrap integration.
+2. **Regulatory corpus** (`corpus/regulatory/`) — SEBI/RBI/GST/IRDAI/Income Tax circulars: Postgres (`mc_regulatory_corpus_*`) and on-disk PDFs under `files/` (gitignored).
+3. **Semantica bridge** (`src/ontology_lib/semantica_bridge.py`) — validates TTL, syncs to Oxigraph, exports merged graphs.
+4. **Library** (`src/ontology_lib/`) — rdflib loaders plus Semantica-backed validation.
+5. **Tests** — parse checks, class assertions, and Semantica bootstrap integration.
 
 ## Semantica stack
 

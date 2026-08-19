@@ -1,0 +1,831 @@
+@prefix : <https://ontology.metareasoning.ai/regulatory/rbi/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+: a owl:Ontology ;
+    rdfs:label "RbiRegulatoryOntology" ;
+    owl:versionInfo "1.0" .
+
+:accept a owl:ObjectProperty ;
+    rdfs:label "accept" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:achieve a owl:ObjectProperty ;
+    rdfs:label "achieve" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:adopted a owl:ObjectProperty ;
+    rdfs:label "adopted" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:affect a owl:ObjectProperty ;
+    rdfs:label "affect" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:allowed a owl:ObjectProperty ;
+    rdfs:label "allowed" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:annex a owl:ObjectProperty ;
+    rdfs:label "annex" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity,
+        :Group .
+
+:apply a owl:ObjectProperty ;
+    rdfs:label "apply" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:appointed a owl:ObjectProperty ;
+    rdfs:label "appointed" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:approved a owl:ObjectProperty ;
+    rdfs:label "approved" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:attract a owl:ObjectProperty ;
+    rdfs:label "attract" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:avail a owl:ObjectProperty ;
+    rdfs:label "avail" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:barred a owl:ObjectProperty ;
+    rdfs:label "barred" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity,
+        :Person .
+
+:based a owl:ObjectProperty ;
+    rdfs:label "based" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:bear a owl:ObjectProperty ;
+    rdfs:label "bear" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:bring a owl:ObjectProperty ;
+    rdfs:label "bring" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :Entity .
+
+:called a owl:ObjectProperty ;
+    rdfs:label "called" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity,
+        :Organization,
+        :Work .
+
+:carry a owl:ObjectProperty ;
+    rdfs:label "carry" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:cites a owl:ObjectProperty ;
+    rdfs:label "cites" ;
+    rdfs:domain :Mastercircular,
+        :Masterdirection ;
+    rdfs:range :Legalreference .
+
+:committed a owl:ObjectProperty ;
+    rdfs:label "committed" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:consolidate a owl:ObjectProperty ;
+    rdfs:label "consolidate" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:consolidated a owl:ObjectProperty ;
+    rdfs:label "consolidated" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:consolidates a owl:ObjectProperty ;
+    rdfs:label "consolidates" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:contact a owl:ObjectProperty ;
+    rdfs:label "contact" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:contains a owl:ObjectProperty ;
+    rdfs:label "contains" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:controls a owl:ObjectProperty ;
+    rdfs:label "controls" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:cover a owl:ObjectProperty ;
+    rdfs:label "cover" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:covers a owl:ObjectProperty ;
+    rdfs:label "covers" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:dated a owl:ObjectProperty ;
+    rdfs:label "dated" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:debit a owl:ObjectProperty ;
+    rdfs:label "debit" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:defines a owl:ObjectProperty ;
+    rdfs:label "defines" ;
+    rdfs:domain :Mastercircular,
+        :Masterdirection,
+        :Notification ;
+    rdfs:range :Definition .
+
+:delegated a owl:ObjectProperty ;
+    rdfs:label "delegated" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:enabling a owl:ObjectProperty ;
+    rdfs:label "enabling" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:encompass a owl:ObjectProperty ;
+    rdfs:label "encompass" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:ended a owl:ObjectProperty ;
+    rdfs:label "ended" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:endorsed a owl:ObjectProperty ;
+    rdfs:label "endorsed" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:ensure a owl:ObjectProperty ;
+    rdfs:label "ensure" ;
+    rdfs:domain :Entity,
+        :Organization ;
+    rdfs:range :OwlThing .
+
+:established a owl:ObjectProperty ;
+    rdfs:label "established" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:evidences a owl:ObjectProperty ;
+    rdfs:label "evidences" ;
+    rdfs:domain :Mastercircular,
+        :Masterdirection,
+        :Notification ;
+    rdfs:range :Entity,
+        :Organization .
+
+:exceed a owl:ObjectProperty ;
+    rdfs:label "exceed" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:exposures a owl:ObjectProperty ;
+    rdfs:label "exposures" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:extend a owl:ObjectProperty ;
+    rdfs:label "extend" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:extended a owl:ObjectProperty ;
+    rdfs:label "extended" ;
+    rdfs:domain :Entity,
+        :Organization ;
+    rdfs:range :Entity .
+
+:features a owl:ObjectProperty ;
+    rdfs:label "features" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:filed a owl:ObjectProperty ;
+    rdfs:label "filed" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:follow a owl:ObjectProperty ;
+    rdfs:label "follow" ;
+    rdfs:domain :Entity,
+        :Organization ;
+    rdfs:range :Entity .
+
+:form a owl:ObjectProperty ;
+    rdfs:label "form" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:formulated a owl:ObjectProperty ;
+    rdfs:label "formulated" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:give a owl:ObjectProperty ;
+    rdfs:label "give" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:given a owl:ObjectProperty ;
+    rdfs:label "given" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:grant a owl:ObjectProperty ;
+    rdfs:label "grant" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:granted a owl:ObjectProperty ;
+    rdfs:label "granted" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:guidelines a owl:ObjectProperty ;
+    rdfs:label "guidelines" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:have a owl:ObjectProperty ;
+    rdfs:label "have" ;
+    rdfs:domain :Entity,
+        :Organization ;
+    rdfs:range :Entity .
+
+:having a owl:ObjectProperty ;
+    rdfs:label "having" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:hold a owl:ObjectProperty ;
+    rdfs:label "hold" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:holds a owl:ObjectProperty ;
+    rdfs:label "holds" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:implement a owl:ObjectProperty ;
+    rdfs:label "implement" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :Entity .
+
+:imposes a owl:ObjectProperty ;
+    rdfs:label "imposes" ;
+    rdfs:domain :Mastercircular,
+        :Masterdirection,
+        :Notification ;
+    rdfs:range :Obligation .
+
+:inHierarchy a owl:ObjectProperty ;
+    rdfs:label "inHierarchy" ;
+    rdfs:domain :Mastercircular,
+        :Masterdirection,
+        :Notification ;
+    rdfs:range :Instrumenthierarchy .
+
+:include a owl:ObjectProperty ;
+    rdfs:label "include" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:includes a owl:ObjectProperty ;
+    rdfs:label "includes" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:incorporate a owl:ObjectProperty ;
+    rdfs:label "incorporate" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :Entity .
+
+:inserted a owl:ObjectProperty ;
+    rdfs:label "inserted" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:institutionalized a owl:ObjectProperty ;
+    rdfs:label "institutionalized" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:introduced a owl:ObjectProperty ;
+    rdfs:label "introduced" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:involv a owl:ObjectProperty ;
+    rdfs:label "involv" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:involves a owl:ObjectProperty ;
+    rdfs:label "involves" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:issue a owl:ObjectProperty ;
+    rdfs:label "issue" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:issued a owl:ObjectProperty ;
+    rdfs:label "issued" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:issues a owl:ObjectProperty ;
+    rdfs:label "issues" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:kept a owl:ObjectProperty ;
+    rdfs:label "kept" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:know a owl:ObjectProperty ;
+    rdfs:label "know" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:launched a owl:ObjectProperty ;
+    rdfs:label "launched" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:lay a owl:ObjectProperty ;
+    rdfs:label "lay" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:limits a owl:ObjectProperty ;
+    rdfs:label "limits" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:made a owl:ObjectProperty ;
+    rdfs:label "made" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:maintain a owl:ObjectProperty ;
+    rdfs:label "maintain" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:make a owl:ObjectProperty ;
+    rdfs:label "make" ;
+    rdfs:domain :Entity,
+        :Product ;
+    rdfs:range :OwlThing .
+
+:mandated a owl:ObjectProperty ;
+    rdfs:label "mandated" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:mean a owl:ObjectProperty ;
+    rdfs:label "mean" ;
+    rdfs:domain :Entity,
+        :Quantity ;
+    rdfs:range :Entity,
+        :Quantity .
+
+:means a owl:ObjectProperty ;
+    rdfs:label "means" ;
+    rdfs:domain :Entity,
+        :Work ;
+    rdfs:range :Entity,
+        :Jurisdiction .
+
+:meet a owl:ObjectProperty ;
+    rdfs:label "meet" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:meets a owl:ObjectProperty ;
+    rdfs:label "meets" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:mentions a owl:ObjectProperty ;
+    rdfs:label "mentions" ;
+    rdfs:domain :Masterdirection ;
+    rdfs:range :Date,
+        :Jurisdiction,
+        :Legalinstrument,
+        :Monetaryamount,
+        :Ordinal,
+        :Organization,
+        :Person,
+        :Product,
+        :Quantity,
+        :Work .
+
+:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain :Date,
+        :Definition,
+        :Entity,
+        :Event,
+        :Facility,
+        :Group,
+        :Jurisdiction,
+        :Location,
+        :Notification,
+        :Obligation,
+        :Ordinal,
+        :Organization,
+        :Percentage,
+        :Person,
+        :Product,
+        :Quantity,
+        :Time,
+        :Work ;
+    rdfs:range xsd:string .
+
+:norms a owl:ObjectProperty ;
+    rdfs:label "norms" ;
+    rdfs:domain :Entity,
+        :Organization ;
+    rdfs:range :Entity .
+
+:notified a owl:ObjectProperty ;
+    rdfs:label "notified" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:occupy a owl:ObjectProperty ;
+    rdfs:label "occupy" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:offer a owl:ObjectProperty ;
+    rdfs:label "offer" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:offered a owl:ObjectProperty ;
+    rdfs:label "offered" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:outflows a owl:ObjectProperty ;
+    rdfs:label "outflows" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:pass a owl:ObjectProperty ;
+    rdfs:label "pass" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:placed a owl:ObjectProperty ;
+    rdfs:label "placed" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:poses a owl:ObjectProperty ;
+    rdfs:label "poses" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:properties a owl:DatatypeProperty ;
+    rdfs:label "properties" ;
+    rdfs:domain :Date,
+        :Definition,
+        :Entity,
+        :Event,
+        :Facility,
+        :Group,
+        :Jurisdiction,
+        :Location,
+        :Notification,
+        :Obligation,
+        :Ordinal,
+        :Organization,
+        :Percentage,
+        :Person,
+        :Product,
+        :Quantity,
+        :Time,
+        :Work ;
+    rdfs:range xsd:string .
+
+:provide a owl:ObjectProperty ;
+    rdfs:label "provide" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:provided a owl:ObjectProperty ;
+    rdfs:label "provided" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:provides a owl:ObjectProperty ;
+    rdfs:label "provides" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:providing a owl:ObjectProperty ;
+    rdfs:label "providing" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:put a owl:ObjectProperty ;
+    rdfs:label "put" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:reckon a owl:ObjectProperty ;
+    rdfs:label "reckon" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:refer a owl:ObjectProperty ;
+    rdfs:label "refer" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:referred a owl:ObjectProperty ;
+    rdfs:label "referred" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:regularised a owl:ObjectProperty ;
+    rdfs:label "regularised" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:report a owl:ObjectProperty ;
+    rdfs:label "report" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:reported a owl:ObjectProperty ;
+    rdfs:label "reported" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:represent a owl:ObjectProperty ;
+    rdfs:label "represent" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:require a owl:ObjectProperty ;
+    rdfs:label "require" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:required a owl:ObjectProperty ;
+    rdfs:label "required" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:requirements a owl:ObjectProperty ;
+    rdfs:label "requirements" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:requires a owl:ObjectProperty ;
+    rdfs:label "requires" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:review a owl:ObjectProperty ;
+    rdfs:label "review" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:seek a owl:ObjectProperty ;
+    rdfs:label "seek" ;
+    rdfs:domain :Jurisdiction ;
+    rdfs:range :OwlThing .
+
+:sells a owl:ObjectProperty ;
+    rdfs:label "sells" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:send a owl:ObjectProperty ;
+    rdfs:label "send" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:sets a owl:ObjectProperty ;
+    rdfs:label "sets" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:specified a owl:ObjectProperty ;
+    rdfs:label "specified" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:specify a owl:ObjectProperty ;
+    rdfs:label "specify" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:structure a owl:ObjectProperty ;
+    rdfs:label "structure" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:submit a owl:ObjectProperty ;
+    rdfs:label "submit" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:take a owl:ObjectProperty ;
+    rdfs:label "take" ;
+    rdfs:domain :Entity ;
+    rdfs:range :OwlThing .
+
+:taking a owl:ObjectProperty ;
+    rdfs:label "taking" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:transfers a owl:ObjectProperty ;
+    rdfs:label "transfers" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:undertake a owl:ObjectProperty ;
+    rdfs:label "undertake" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:updated a owl:ObjectProperty ;
+    rdfs:label "updated" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:use a owl:ObjectProperty ;
+    rdfs:label "use" ;
+    rdfs:domain :OwlThing ;
+    rdfs:range :OwlThing .
+
+:weighted a owl:ObjectProperty ;
+    rdfs:label "weighted" ;
+    rdfs:domain :Entity ;
+    rdfs:range :Entity .
+
+:Instrumenthierarchy a owl:Class ;
+    rdfs:label "Instrumenthierarchy" ;
+    rdfs:comment "Class representing instrumenthierarchy entities" ;
+    rdfs:subClassOf :Entity .
+
+:Legalinstrument a owl:Class ;
+    rdfs:label "Legalinstrument" ;
+    rdfs:comment "Class representing legalinstrument entities" ;
+    rdfs:subClassOf :Entity .
+
+:Legalreference a owl:Class ;
+    rdfs:label "Legalreference" ;
+    rdfs:comment "Class representing legalreference entities" ;
+    rdfs:subClassOf :Entity .
+
+:Monetaryamount a owl:Class ;
+    rdfs:label "Monetaryamount" ;
+    rdfs:comment "Class representing monetaryamount entities" ;
+    rdfs:subClassOf :Entity .
+
+:Event a owl:Class ;
+    rdfs:label "Event" ;
+    rdfs:comment "Class representing event entities" ;
+    rdfs:subClassOf :Entity .
+
+:Facility a owl:Class ;
+    rdfs:label "Facility" ;
+    rdfs:comment "Class representing facility entities" ;
+    rdfs:subClassOf :Entity .
+
+:Location a owl:Class ;
+    rdfs:label "Location" ;
+    rdfs:comment "Class representing location entities" ;
+    rdfs:subClassOf :Entity .
+
+:Percentage a owl:Class ;
+    rdfs:label "Percentage" ;
+    rdfs:comment "Class representing percentage entities" ;
+    rdfs:subClassOf :Entity .
+
+:Time a owl:Class ;
+    rdfs:label "Time" ;
+    rdfs:comment "Class representing time entities" ;
+    rdfs:subClassOf :Entity .
+
+:Date a owl:Class ;
+    rdfs:label "Date" ;
+    rdfs:comment "Class representing date entities" ;
+    rdfs:subClassOf :Entity .
+
+:Definition a owl:Class ;
+    rdfs:label "Definition" ;
+    rdfs:comment "Class representing definition entities" ;
+    rdfs:subClassOf :Entity .
+
+:Group a owl:Class ;
+    rdfs:label "Group" ;
+    rdfs:comment "Class representing group entities" ;
+    rdfs:subClassOf :Entity .
+
+:Obligation a owl:Class ;
+    rdfs:label "Obligation" ;
+    rdfs:comment "Class representing obligation entities" ;
+    rdfs:subClassOf :Entity .
+
+:Ordinal a owl:Class ;
+    rdfs:label "Ordinal" ;
+    rdfs:comment "Class representing ordinal entities" ;
+    rdfs:subClassOf :Entity .
+
+:Person a owl:Class ;
+    rdfs:label "Person" ;
+    rdfs:comment "Class representing person entities" ;
+    rdfs:subClassOf :Entity .
+
+:Product a owl:Class ;
+    rdfs:label "Product" ;
+    rdfs:comment "Class representing product entities" ;
+    rdfs:subClassOf :Entity .
+
+:Jurisdiction a owl:Class ;
+    rdfs:label "Jurisdiction" ;
+    rdfs:comment "Class representing jurisdiction entities" ;
+    rdfs:subClassOf :Entity .
+
+:Mastercircular a owl:Class ;
+    rdfs:label "Mastercircular" ;
+    rdfs:comment "Class representing mastercircular entities" ;
+    rdfs:subClassOf :Entity .
+
+:Quantity a owl:Class ;
+    rdfs:label "Quantity" ;
+    rdfs:comment "Class representing quantity entities" ;
+    rdfs:subClassOf :Entity .
+
+:Work a owl:Class ;
+    rdfs:label "Work" ;
+    rdfs:comment "Class representing work entities" ;
+    rdfs:subClassOf :Entity .
+
+:Masterdirection a owl:Class ;
+    rdfs:label "Masterdirection" ;
+    rdfs:comment "Class representing masterdirection entities" ;
+    rdfs:subClassOf :Entity .
+
+:Notification a owl:Class ;
+    rdfs:label "Notification" ;
+    rdfs:comment "Class representing notification entities" ;
+    rdfs:subClassOf :Entity .
+
+:Organization a owl:Class ;
+    rdfs:label "Organization" ;
+    rdfs:comment "Class representing organization entities" ;
+    rdfs:subClassOf :Entity .
+
+:Entity a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:comment "Class representing entity entities" ;
+    rdfs:subClassOf :Entity .
+

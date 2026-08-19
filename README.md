@@ -8,6 +8,7 @@ Built on [Semantica](https://github.com/semantica-agi/semantica) for SHACL-aware
 
 ```
 ontology/          # RDF/Turtle source files (versioned truth)
+corpus/regulatory/ # SEBI / RBI / GST / IRDAI / Income Tax source corpus (Postgres + PDFs)
 config/            # Semantica integration settings
 src/ontology_lib/  # Python helpers — load, validate, sync to graph store
 tests/             # rdflib + Semantica integration checks
@@ -24,6 +25,32 @@ pip install -e ".[dev]"
 ```
 
 `validate.sh` runs Semantica validation, syncs triples into a local Oxigraph store (`.semantica/oxigraph`), exports a merged Turtle file to `build/ontology/core.ttl`, then runs pytest.
+
+### Regulatory corpus (Postgres)
+
+Circular metadata and extracted text use the same Postgres schema as multicatalyst-agents (`mc_regulatory_corpus_*`):
+
+```bash
+cp .env.example .env
+./scripts/bootstrap_postgres.sh --sync-from-multicatalyst
+```
+
+Generate ontology **from source text** with Semantica (serious default):
+spaCy ML NER → regulatory obligation/definition patterns → OntologyGenerator → Turtle/Oxigraph.
+Optional LLM triplets/TBox when `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is in `.env`.
+
+```bash
+pip install -e ".[regulatory]"
+python -m spacy download en_core_web_md && python -m spacy download en_core_web_sm
+
+# serious generation (Income Tax capped at 3k unless --full)
+python scripts/generate_regulatory_ontology.py
+
+# pilot
+python scripts/generate_regulatory_ontology.py --corpus gst --limit 50
+```
+
+Outputs: `build/ontology/regulatory/` and `ontology/regulatory/*.ttl`. See `corpus/regulatory/README.md`.
 
 ## Semantica integration
 
