@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Regulatory Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #121a22;
+      --ink-soft: #3a4754;
+      --muted: #667688;
+      --line: rgba(18, 26, 34, 0.12);
+      --paper: #e8eef2;
+      --panel: rgba(244, 249, 251, 0.86);
+      --accent: #0f6b5c;
+      --accent-deep: #0a4f44;
+      --accent-wash: rgba(15, 107, 92, 0.12);
+      --warn: #9a3b2f;
+      --ok: #1f6b3a;
+      --radius: 12px;
+      --font-display: "Fraunces", Georgia, serif;
+      --font-body: "Manrope", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--ink);
+      font-family: var(--font-body);
+      background:
+        radial-gradient(1100px 640px at 8% -8%, rgba(15, 107, 92, 0.18), transparent 55%),
+        radial-gradient(800px 520px at 100% 8%, rgba(40, 90, 130, 0.12), transparent 48%),
+        linear-gradient(180deg, #dfe8ee 0%, var(--paper) 45%, #dde7e4 100%);
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+
+    .shell {
+      position: relative;
+      width: min(920px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: clamp(2.5rem, 8vh, 5.5rem) 0 4rem;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      font-weight: 650;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+      margin: 0 0 0.75rem;
+      animation: rise 0.7s ease both;
+    }
+
+    .lede {
+      max-width: 34rem;
+      margin: 0 0 2rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      animation: rise 0.7s ease 0.08s both;
+    }
+
+    .search-panel {
+      display: grid;
+      gap: 0.85rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      animation: rise 0.7s ease 0.14s both;
+    }
+
+    .corpora {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem;
+      padding: 0.2rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .corpora button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--ink-soft);
+      font: inherit;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.01em;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .corpora button:hover {
+      color: var(--ink);
+      background: rgba(18, 26, 34, 0.04);
+    }
+
+    .corpora button[aria-pressed="true"] {
+      color: var(--accent-deep);
+      background: var(--accent-wash);
+    }
+
+    .query-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.6rem;
+    }
+
+    .query-row input {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f7fbfd;
+      color: var(--ink);
+      font: inherit;
+      font-size: 1.05rem;
+      padding: 0.9rem 1rem;
+      outline: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .query-row input:focus {
+      border-color: rgba(15, 107, 92, 0.45);
+      box-shadow: 0 0 0 3px rgba(15, 107, 92, 0.12);
+    }
+
+    .query-row button[type="submit"] {
+      border: 0;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #f7fff9;
+      font: inherit;
+      font-weight: 700;
+      padding: 0 1.25rem;
+      cursor: pointer;
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .query-row button[type="submit"]:hover {
+      background: var(--accent-deep);
+    }
+
+    .query-row button[type="submit"]:active {
+      transform: translateY(1px);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1rem;
+      align-items: center;
+      min-height: 1.25rem;
+      margin-top: 1.1rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      animation: rise 0.5s ease both;
+    }
+
+    .meta strong {
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--accent-deep);
+      background: var(--accent-wash);
+      border-radius: 8px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .status-error { color: var(--warn); }
+    .status-ok { color: var(--ok); }
+
+    .results {
+      margin-top: 1.75rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .hit {
+      padding: 1.15rem 0.15rem;
+      border-bottom: 1px solid var(--line);
+      animation: rise 0.45s ease both;
+    }
+
+    .hit:nth-child(1) { animation-delay: 0.02s; }
+    .hit:nth-child(2) { animation-delay: 0.05s; }
+    .hit:nth-child(3) { animation-delay: 0.08s; }
+    .hit:nth-child(4) { animation-delay: 0.11s; }
+    .hit:nth-child(5) { animation-delay: 0.14s; }
+
+    .hit-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 0.85rem;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .hit-title {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.015em;
+    }
+
+    .hit-id {
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .sources {
+      margin-top: 0.55rem;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+    }
+
+    .related {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.25rem;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+    }
+
+    .related li::before {
+      content: "→ ";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .empty {
+      margin-top: 2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      margin-top: 2.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .query-row {
+        grid-template-columns: 1fr;
+      }
+
+      .query-row button[type="submit"] {
+        min-height: 2.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <h1 class="brand">Regulatory Search</h1>
+    <p class="lede">
+      Vocab-routed retrieval across SEBI, RBI, GST, insurance, and income tax —
+      with FTS, topic postings, and one-hop document links.
+    </p>
+
+    <form class="search-panel" id="search-form">
+      <div class="corpora" id="corpora" role="group" aria-label="Corpus"></div>
+      <div class="query-row">
+        <input
+          id="query"
+          name="query"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Try “input tax credit” or “insider trading”"
+          required
+        />
+        <button type="submit">Search</button>
+      </div>
+    </form>
+
+    <div class="meta" id="meta" hidden></div>
+    <section class="results" id="results" aria-live="polite"></section>
+    <p class="footer">Local API · same origin · <span id="api-status">checking…</span></p>
+  </main>
+
+  <script>
+    const CORPORA = [
+      { id: "gst", label: "GST" },
+      { id: "sebi", label: "SEBI" },
+      { id: "rbi", label: "RBI" },
+      { id: "insurance", label: "Insurance" },
+      { id: "income_tax", label: "Income tax" },
+    ];
+
+    const EXAMPLES = {
+      gst: "input tax credit",
+      sebi: "insider trading",
+      rbi: "KYC",
+      insurance: "solvency margin",
+      income_tax: "section 80C",
+    };
+
+    let corpus = "gst";
+
+    const corporaEl = document.getElementById("corpora");
+    const form = document.getElementById("search-form");
+    const queryEl = document.getElementById("query");
+    const metaEl = document.getElementById("meta");
+    const resultsEl = document.getElementById("results");
+    const apiStatusEl = document.getElementById("api-status");
+
+    function renderCorpora() {
+      corporaEl.innerHTML = "";
+      for (const item of CORPORA) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = item.label;
+        btn.setAttribute("aria-pressed", String(item.id === corpus));
+        btn.addEventListener("click", () => {
+          corpus = item.id;
+          queryEl.placeholder = `Try “${EXAMPLES[corpus]}”`;
+          renderCorpora();
+        });
+        corporaEl.appendChild(btn);
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function renderMeta(data) {
+      const codes = (data.normalized_codes || [])
+        .map((c) => `<span class="chip">${escapeHtml(c.kind)} · ${escapeHtml(c.code)}</span>`)
+        .join("");
+      metaEl.hidden = false;
+      metaEl.innerHTML = `
+        <span><strong>${escapeHtml(data.hits?.length ?? 0)}</strong> hits</span>
+        <span>${escapeHtml(Number(data.latency_ms || 0).toFixed(0))} ms</span>
+        <span>intent <strong>${escapeHtml(data.intent || "—")}</strong></span>
+        ${codes}
+      `;
+    }
+
+    function renderHits(hits) {
+      if (!hits?.length) {
+        resultsEl.innerHTML = `<p class="empty">No documents matched. Try a topic phrase or citation-style query.</p>`;
+        return;
+      }
+
+      resultsEl.innerHTML = hits.map((hit) => {
+        const related = (hit.related || [])
+          .slice(0, 4)
+          .map((r) => `<li><code>${escapeHtml(r.rel)}</code> ${escapeHtml(r.direction)} · ${escapeHtml(r.doc_id)}</li>`)
+          .join("");
+        const sources = (hit.sources || []).join(" · ");
+        return `
+          <article class="hit">
+            <div class="hit-top">
+              <span>${escapeHtml(hit.hierarchy || "document")}</span>
+              <span>score ${escapeHtml(Number(hit.score || 0).toFixed(4))}</span>
+            </div>
+            <h2 class="hit-title">${escapeHtml(hit.title || hit.doc_id)}</h2>
+            <div class="hit-id">${escapeHtml(hit.doc_id)}</div>
+            <div class="sources">${escapeHtml(sources)}</div>
+            ${related ? `<ul class="related">${related}</ul>` : ""}
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function runSearch(event) {
+      event?.preventDefault();
+      const query = queryEl.value.trim();
+      if (!query) return;
+
+      metaEl.hidden = false;
+      metaEl.innerHTML = `<span>Searching <strong>${escapeHtml(corpus)}</strong>…</span>`;
+      resultsEl.innerHTML = "";
+
+      try {
+        const res = await fetch("/search", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ corpus, query, limit: 12 }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          throw new Error(data.detail || `HTTP ${res.status}`);
+        }
+        renderMeta(data);
+        renderHits(data.hits || []);
+      } catch (err) {
+        metaEl.innerHTML = `<span class="status-error">${escapeHtml(err.message || err)}</span>`;
+        resultsEl.innerHTML = "";
+      }
+    }
+
+    async function checkHealth() {
+      try {
+        const res = await fetch("/health");
+        const data = await res.json();
+        if (res.ok && data.status === "ok") {
+          apiStatusEl.textContent = "healthy";
+          apiStatusEl.className = "status-ok";
+          return;
+        }
+        throw new Error("unhealthy");
+      } catch {
+        apiStatusEl.textContent = "unreachable — start scripts/run_regulatory_search_api.py";
+        apiStatusEl.className = "status-error";
+      }
+    }
+
+    form.addEventListener("submit", runSearch);
+    renderCorpora();
+    queryEl.placeholder = `Try “${EXAMPLES[corpus]}”`;
+    checkHealth();
+
+    const params = new URLSearchParams(location.search);
+    if (params.get("q")) {
+      const requested = params.get("corpus");
+      if (requested && CORPORA.some((c) => c.id === requested)) {
+        corpus = requested;
+        renderCorpora();
+      }
+      queryEl.value = params.get("q");
+      runSearch();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Act> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing act entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Act"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Circular> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing circular entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Circular"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Date> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing date entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Date"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Definition> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing definition entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Definition"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Entity> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing entity entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Entity"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Event> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing event entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Event"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Exposuredraft> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing exposuredraft entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Exposuredraft"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Facility> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing facility entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Facility"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Group> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing group entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Group"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Guideline> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing guideline entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Guideline"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Instrumenthierarchy> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing instrumenthierarchy entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Instrumenthierarchy"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Jurisdiction> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing jurisdiction entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Jurisdiction"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Language> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing language entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Language"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Legalinstrument> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing legalinstrument entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Legalinstrument"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Legalreference> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing legalreference entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Legalreference"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Location> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing location entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Location"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Monetaryamount> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing monetaryamount entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Monetaryamount"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Notification> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing notification entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Notification"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Obligation> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing obligation entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Obligation"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Ordinal> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing ordinal entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Ordinal"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Organization> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing organization entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Organization"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Other> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing other entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Other"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Percentage> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing percentage entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Percentage"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Person> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing person entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Person"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Product> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing product entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Product"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Quantity> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing quantity entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Quantity"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Regulation> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing regulation entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Regulation"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Rule> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing rule entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Rule"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Time> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing time entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Time"@en .
+
+<https://ontology.metareasoning.ai/regulatory/insurance/Work> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:definition "Class representing work entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:prefLabel "Work"@en .
+
+<https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> a skos:Concept ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> ;
+    skos:narrower <https://ontology.metareasoning.ai/regulatory/insurance/Act>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Circular>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Date>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Definition>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Entity>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Event>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Exposuredraft>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Facility>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Group>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Guideline>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Instrumenthierarchy>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Jurisdiction>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Language>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Legalinstrument>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Legalreference>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Location>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Monetaryamount>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Notification>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Obligation>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Ordinal>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Organization>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Other>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Percentage>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Person>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Product>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Quantity>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Regulation>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Rule>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Time>,
+        <https://ontology.metareasoning.ai/regulatory/insurance/Work> ;
+    skos:prefLabel "Insurance / IRDAI"@en ;
+    skos:topConceptOf <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> .
+
+<https://ontology.metareasoning.ai/regulatory/vocabulary/insurance/scheme> a skos:ConceptScheme ;
+    dcterms:description "SKOS view of the Insurance / IRDAI ontology classes."@en ;
+    skos:hasTopConcept <https://ontology.metareasoning.ai/regulatory/vocabulary/insurance> ;
+    skos:prefLabel "Insurance / IRDAI Vocabulary"@en .
+

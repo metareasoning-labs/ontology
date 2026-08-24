@@ -1,0 +1,223 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Circular> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing circular entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Circular"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Date> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing date entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Date"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Definition> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing definition entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Definition"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Entity> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing entity entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Entity"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Event> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing event entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Event"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Facility> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing facility entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Facility"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Faq> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing faq entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Faq"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Financeact> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing financeact entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Financeact"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Financebill> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing financebill entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Financebill"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Group> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing group entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Group"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Instrumenthierarchy> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing instrumenthierarchy entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Instrumenthierarchy"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/International> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing international entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "International"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Jurisdiction> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing jurisdiction entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Jurisdiction"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Language> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing language entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Language"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Legalinstrument> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing legalinstrument entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Legalinstrument"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Legalreference> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing legalreference entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Legalreference"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Location> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing location entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Location"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Monetaryamount> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing monetaryamount entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Monetaryamount"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Notification> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing notification entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Notification"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Obligation> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing obligation entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Obligation"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Ordinal> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing ordinal entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Ordinal"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Organization> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing organization entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Organization"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Percentage> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing percentage entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Percentage"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Person> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing person entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Person"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Product> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing product entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Product"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Provision> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing provision entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Provision"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Quantity> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing quantity entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Quantity"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Time> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing time entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Time"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Whatsnew> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing whatsnew entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Whatsnew"@en .
+
+<https://ontology.metareasoning.ai/regulatory/income_tax/Work> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:definition "Class representing work entities"@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:prefLabel "Work"@en .
+
+<https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> a skos:Concept ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> ;
+    skos:narrower <https://ontology.metareasoning.ai/regulatory/income_tax/Circular>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Date>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Definition>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Entity>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Event>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Facility>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Faq>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Financeact>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Financebill>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Group>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Instrumenthierarchy>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/International>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Jurisdiction>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Language>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Legalinstrument>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Legalreference>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Location>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Monetaryamount>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Notification>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Obligation>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Ordinal>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Organization>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Percentage>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Person>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Product>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Provision>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Quantity>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Time>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Whatsnew>,
+        <https://ontology.metareasoning.ai/regulatory/income_tax/Work> ;
+    skos:prefLabel "Income Tax"@en ;
+    skos:topConceptOf <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> .
+
+<https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax/scheme> a skos:ConceptScheme ;
+    dcterms:description "SKOS view of the Income Tax ontology classes."@en ;
+    skos:hasTopConcept <https://ontology.metareasoning.ai/regulatory/vocabulary/income_tax> ;
+    skos:prefLabel "Income Tax Vocabulary"@en .
+

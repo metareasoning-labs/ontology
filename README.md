@@ -35,22 +35,28 @@ cp .env.example .env
 ./scripts/bootstrap_postgres.sh --sync-from-multicatalyst
 ```
 
-Generate ontology **from source text** with Semantica (serious default):
-spaCy ML NER → regulatory obligation/definition patterns → OntologyGenerator → Turtle/Oxigraph.
-Optional LLM triplets/TBox when `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is in `.env`.
+**Agent packages** (vocab / grammar / ontology JSON + fast search) — preferred for agents:
+
+```bash
+pip install -e ".[regulatory-packages]"
+python scripts/rebuild_regulatory_packages.py --corpus gst
+python scripts/build_regulatory_search_indexes.py --corpus gst
+python scripts/search_regulatory.py --corpus gst "input tax credit"
+
+# Search UI + API (http://127.0.0.1:8091/)
+pip install -e ".[regulatory-packages-api]"
+python scripts/run_regulatory_search_api.py
+```
+
+**Semantica OWL** (optional formal export):
 
 ```bash
 pip install -e ".[regulatory]"
 python -m spacy download en_core_web_md && python -m spacy download en_core_web_sm
-
-# serious generation (Income Tax capped at 3k unless --full)
-python scripts/generate_regulatory_ontology.py
-
-# pilot
 python scripts/generate_regulatory_ontology.py --corpus gst --limit 50
 ```
 
-Outputs: `build/ontology/regulatory/` and `ontology/regulatory/*.ttl`. See `corpus/regulatory/README.md`.
+See `corpus/regulatory/README.md`.
 
 ## Semantica integration
 

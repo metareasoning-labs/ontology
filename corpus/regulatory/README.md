@@ -1,63 +1,72 @@
 # Regulatory corpus
 
-This folder holds **source regulatory material** and Semantica outputs derived from it.
+Source regulatory material, **agent packages** (vocab/grammar/ontology JSON), and optional Semantica OWL exports.
+
+## Two layers
+
+| Layer | Purpose | Hot path for agents? |
+|-------|---------|----------------------|
+| **Packages** (`packages/regulatory/{corpus}/`) | Multicatalyst-style `catalog` / `ontology` / `vocabulary` / `grammar` | **Yes** — navigate & search |
+| **Semantica OWL** (`ontology/regulatory/*.ttl`, Oxigraph) | Formal TBox / SPARQL | No — optional formal export |
 
 ## Source of truth
 
 | Path | Contents |
 |------|----------|
-| `files/{sebi,rbi,gst,insurance,income_tax}/documents/<id>/source.pdf` | Actual regulator PDFs |
+| `files/{sebi,rbi,gst,insurance,income_tax}/documents/<id>/source.pdf` | Regulator PDFs |
 | Postgres `mc_regulatory_corpus_*` | Document metadata + extracted text |
-| `schema.sql` | Postgres DDL |
-
-Configure DB via `.env` (`DATABASE_URL`). Bootstrap:
+| `schema.sql` | Corpus + FTS/posting index DDL |
 
 ```bash
 ./scripts/bootstrap_postgres.sh --sync-from-multicatalyst
 ```
 
-## Generate ontology with Semantica (from sources)
+## Agent packages (ported from multicatalyst-agents)
 
-Semantica is **not** only a viewer. Serious pipeline:
-
-1. Read instrument text from Postgres (backed by the PDFs above)
-2. spaCy ML NER (`en_core_web_md`) + regulatory obligation/definition/citation patterns
-3. Optional LLM triplets + TBox refine if `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` is set
-4. Semantica `OntologyGenerator` → OWL classes/properties
-5. Export Turtle + Oxigraph
+Builders live in `src/regulatory_packages/` (no crawlers). Rebuild from Postgres:
 
 ```bash
-# one-time ML/LLM deps
+pip install -e ".[regulatory-packages]"
+
+# rebuild ontology + vocabulary + grammar JSON
+python scripts/rebuild_regulatory_packages.py --corpus gst
+# or: --corpus all
+
+# build Postgres FTS + vocab posting indexes
+python scripts/build_regulatory_search_indexes.py --corpus gst
+
+# search (vocab normalize → grammar route → FTS + postings → RRF)
+python scripts/search_regulatory.py --corpus gst "input tax credit registration"
+
+# optional search API
+pip install -e ".[regulatory-packages-api]"
+python scripts/run_regulatory_search_api.py   # http://127.0.0.1:8091/search
+```
+
+Outputs under `packages/regulatory/{corpus}/`:
+
+- `catalog.json`, `ontology.json`, `taxonomy.json`, `vocabulary.json`, `grammar.json`
+
+Search indexes (Postgres):
+
+- `mc_regulatory_doc_fts` — title + text `tsvector`
+- `mc_regulatory_vocab_postings` — entity / topic / section_ref → doc_id
+
+## Semantica OWL (optional formal path)
+
+```bash
 pip install -e ".[regulatory]"
 python -m spacy download en_core_web_md
-python -m spacy download en_core_web_sm
-
-# serious generation (default). Income Tax capped at 3k richest docs unless --full.
-python scripts/generate_regulatory_ontology.py
-
-# pilot
 python scripts/generate_regulatory_ontology.py --corpus gst --limit 50
-
-# enable LLM upgrade (add key to .env first)
-# ANTHROPIC_API_KEY=... SEMANTICA_LLM_PROVIDER=anthropic
-python scripts/generate_regulatory_ontology.py --corpus gst --llm-docs 100
 ```
 
-Outputs:
-
-- `ontology/regulatory/{corpus}.ttl` — Semantica TBox modules
-- `build/ontology/regulatory/{corpus}/ontology.ttl` — instance graph
-- `build/ontology/regulatory/complete.ttl` — merged graph
-- `.semantica/oxigraph-regulatory/` — queryable store
-
-Explorer (view/query layer on top of that graph):
+Explorer (OWL graph UI, not agent search):
 
 ```bash
-python scripts/export_explorer_graph.py   # only after generation
-semantica explorer start --graph build/ontology/regulatory/explorer-graph.json
+export SEMANTICA_ALLOW_ANONYMOUS=true
+python scripts/bootstrap_explorer.py --corpus gst
 ```
 
-## Not kept here
+## Upgrade path
 
-Pre-built multicatalyst `ontology.json` / `vocabulary.json` / `grammar.json` /
-`catalog.json` packages are **not** source regulatory files and are not used.
+At multi-million-doc scale, move document recall to OpenSearch while keeping vocab/grammar posting lists and Postgres (or Neo4j) for bounded relationship hops. Semantica/Oxigraph remains optional for SPARQL.

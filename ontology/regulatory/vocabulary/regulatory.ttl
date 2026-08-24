@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://ontology.metareasoning.ai/regulatory#CrossReference> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Cross reference"@en .
+
+<https://ontology.metareasoning.ai/regulatory#DefinedTerm> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Defined term"@en .
+
+<https://ontology.metareasoning.ai/regulatory#InstrumentHierarchy> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Instrument hierarchy"@en .
+
+<https://ontology.metareasoning.ai/regulatory#Obligation> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Obligation"@en .
+
+<https://ontology.metareasoning.ai/regulatory#RegulatedEntity> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Regulated entity"@en .
+
+<https://ontology.metareasoning.ai/regulatory#RegulatoryInstrument> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:definition "Act, regulation, circular, notification, or other regulatory text unit."@en ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Regulatory instrument"@en .
+
+<https://ontology.metareasoning.ai/regulatory#Topic> a skos:Concept ;
+    skos:broader <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:prefLabel "Regulatory topic"@en .
+
+<https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> a skos:Concept ;
+    skos:inScheme <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> ;
+    skos:narrower <https://ontology.metareasoning.ai/regulatory#CrossReference>,
+        <https://ontology.metareasoning.ai/regulatory#DefinedTerm>,
+        <https://ontology.metareasoning.ai/regulatory#InstrumentHierarchy>,
+        <https://ontology.metareasoning.ai/regulatory#Obligation>,
+        <https://ontology.metareasoning.ai/regulatory#RegulatedEntity>,
+        <https://ontology.metareasoning.ai/regulatory#RegulatoryInstrument>,
+        <https://ontology.metareasoning.ai/regulatory#Topic> ;
+    skos:prefLabel "Regulatory (shared)"@en ;
+    skos:topConceptOf <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> .
+
+<https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory/scheme> a skos:ConceptScheme ;
+    dcterms:description "SKOS view of the Regulatory (shared) ontology classes."@en ;
+    skos:hasTopConcept <https://ontology.metareasoning.ai/regulatory/vocabulary/regulatory> ;
+    skos:prefLabel "Regulatory (shared) Vocabulary"@en .
+

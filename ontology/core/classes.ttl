@@ -2,6 +2,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+<https://ontology.metareasoning.ai/core>
+  a owl:Ontology ;
+  rdfs:label "MetaReasoning Core Ontology"@en ;
+  owl:versionInfo "0.1.0" .
+
 :Entity a owl:Class ;
   rdfs:label "Entity"@en ;
   rdfs:comment "Anything that can be referenced in verification or agent reasoning."@en .

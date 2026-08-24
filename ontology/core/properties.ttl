@@ -3,6 +3,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://ontology.metareasoning.ai/core>
+  a owl:Ontology ;
+  rdfs:label "MetaReasoning Core Ontology"@en ;
+  owl:versionInfo "0.1.0" .
+
 :hasLabel a owl:DatatypeProperty ;
   rdfs:domain :Entity ;
   rdfs:range xsd:string ;

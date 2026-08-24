@@ -18,3 +18,6 @@ corpus/regulatory/files/
 
 # Semantica Explorer preload (large multi-regulator graph)
 build/ontology/regulatory/explorer-graph.json
+
+# Large agent package artifacts (rebuild via scripts/rebuild_regulatory_packages.py)
+packages/regulatory/

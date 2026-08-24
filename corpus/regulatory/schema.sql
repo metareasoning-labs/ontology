@@ -75,3 +75,39 @@ CREATE INDEX IF NOT EXISTS ix_mc_regulatory_corpus_relationships_source
     ON mc_regulatory_corpus_relationships (corpus, source_doc_id);
 CREATE INDEX IF NOT EXISTS ix_mc_regulatory_corpus_relationships_target
     ON mc_regulatory_corpus_relationships (corpus, target_doc_id);
+
+-- ---------------------------------------------------------------------------
+-- Agentic search indexes (vocab/grammar posting lists + full-text)
+-- ---------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS mc_regulatory_doc_fts (
+    document_id UUID PRIMARY KEY
+        REFERENCES mc_regulatory_corpus_documents (id) ON DELETE CASCADE,
+    corpus VARCHAR(64) NOT NULL,
+    doc_id VARCHAR(256) NOT NULL,
+    title TEXT NOT NULL DEFAULT '',
+    tsv tsvector NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    CONSTRAINT uq_regulatory_doc_fts_corpus_doc UNIQUE (corpus, doc_id)
+);
+
+CREATE INDEX IF NOT EXISTS ix_mc_regulatory_doc_fts_corpus
+    ON mc_regulatory_doc_fts (corpus);
+CREATE INDEX IF NOT EXISTS ix_mc_regulatory_doc_fts_tsv
+    ON mc_regulatory_doc_fts USING GIN (tsv);
+
+CREATE TABLE IF NOT EXISTS mc_regulatory_vocab_postings (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    corpus VARCHAR(64) NOT NULL,
+    kind VARCHAR(32) NOT NULL,  -- entity | topic | section_ref
+    code VARCHAR(512) NOT NULL,
+    doc_id VARCHAR(256) NOT NULL,
+    weight DOUBLE PRECISION NOT NULL DEFAULT 1.0,
+    CONSTRAINT uq_regulatory_vocab_postings UNIQUE (corpus, kind, code, doc_id)
+);
+
+CREATE INDEX IF NOT EXISTS ix_mc_regulatory_vocab_postings_lookup
+    ON mc_regulatory_vocab_postings (corpus, kind, code);
+CREATE INDEX IF NOT EXISTS ix_mc_regulatory_vocab_postings_doc
+    ON mc_regulatory_vocab_postings (corpus, doc_id);
+
